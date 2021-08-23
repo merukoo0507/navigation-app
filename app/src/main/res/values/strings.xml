@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NavigationApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Home Fragment</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="third_fragment">Third Fragment</string>
+    <string name="arg1_input">arg1: </string>
+    <string name="arg2_input">arg2: </string>
+    <string name="setting_fragment">Setting Fragment</string>
+</resources>
