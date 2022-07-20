@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navigation_example.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+                android:id="@+id/action_homeFragment_to_secondFragment"
+                app:destination="@id/secondFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.navigation_example.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+        <argument
+            android:name="username"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="example.com/login/{username}" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.navigation_example.ThirdFragment"
+        android:label="{arg1}" >
+        <argument
+            android:name="arg1"
+            app:argType="string" />
+        <argument android:name="arg2"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.navigation_example.SettingFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_setting" />
+    <fragment android:id="@+id/termsFragment"
+              android:name="com.example.navigation_example.TermsFragment"
+              android:label="@string/terms"/>
+    <action android:id="@+id/action_global_termsFragment" app:destination="@id/termsFragment"/>
+</navigation>
